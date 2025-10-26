@@ -98,7 +98,7 @@ if page == "Data Viz":
     
     st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", use_container_width=True)
     st.header("Data Visualization")
-    embed_url = "https://lookerstudio.google.com/reporting/26d9af1d-06d5-4af6-9b58-e12e2de59c61"
+    embed_url = "https://lookerstudio.google.com/embed/reporting/26d9af1d-06d5-4af6-9b58-e12e2de59c61/page/5eobF"
     components.iframe(src=embed_url, width=1000, height=600)
     st.subheader("👀 Data Preview")
     st.write("Observe and manipulate the data as it applies to your situation to see what factors are impacting your academic performance!")

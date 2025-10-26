@@ -179,11 +179,7 @@ if page == "Prediction":
        prediction = model.predict(new_df_scaled)[0]
        st.success(f"Predicted **{target_col}**: {prediction}")
     
-
-
-#st.image()
-    
-
+## Crystal Ball
 if page == "Crystal Ball":
     st.image("nicole-avagliano-TeLjs2pL5fA-unsplash.jpg", use_container_width=True)
     st.header("Crystal Ball")

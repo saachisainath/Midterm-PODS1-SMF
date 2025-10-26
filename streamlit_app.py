@@ -119,7 +119,7 @@ if page == "Data Viz":
     st.subheader("📊 Summary Statistics")
     st.write(df.describe())
 
-if page == "Prediction":
+#if page == "Prediction":
     #st.image()
 
 if page == "Crystal Ball":

@@ -97,7 +97,7 @@ if page == "Data Viz":
     
     st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", use_container_width=True)
     st.header("Data Visualization")
-    embed_url = "https://lookerstudio.google.com/s/jvmuJ7iG-yI"
+    embed_url = "https://lookerstudio.google.com/s/rkqD2c5GnEM"
     components.iframe(src=embed_url, width=1000, height=600)
     st.subheader("👀 Data Preview")
     st.write("Observe and manipulate the data as it applies to your situation to see what factors are impacting your academic performance!")
@@ -129,9 +129,9 @@ if page == "Data Viz":
 
 
 ## Prediction Page
-if page == "Score Prediction":
+if page == "Prediction":
     st.image("robynne-o-HOrhCnQsxnQ-unsplash.jpg", use_container_width=True)
-    st.header("Prediction")
+    st.header("Prediction Model")
 
     st.info("Using sample data (Student Performance)")
     df2 = pd.DataFrame({

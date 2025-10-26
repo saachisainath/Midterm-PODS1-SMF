@@ -63,7 +63,7 @@ if page == "Introduction":
     st.write("Our aim is to arm you with information so you can grow as a student. Take a breath, take a look, you've got this semester!")
     
     st.subheader("📊 Data Set")
-    st.image("deng-xiang--WXQm_NTK0U-unsplash.jpg")
+    st.image("deng-xiang--WXQm_NTK0U-unsplash.jpg", width=380)
     st.write("Take a look here to see what we use to inform our student success visualizations and predictions!")
 
     st.markdown("##### Data Preview")

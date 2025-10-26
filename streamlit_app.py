@@ -76,3 +76,18 @@ if page == "Introduction":
 
     if st.button("Generate Statistical Summary"):
         st.dataframe(df.describe())
+
+## Data Viz Page
+if page == "Data Viz":
+    ## Data Preview
+    st.subheader("Data Preview")
+    st.dataframe(df.head())
+    st.dataframe(df.tail())
+    ## Basic Info
+    st.sidebar.subheader("Pick Your Values")
+    st.sidebar.header("Chart Settings")
+    numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
+    all_colls = df.columns.tolist()
+    ## Sidebar Filters
+    #x_axis = st.sidebar.selectbox("X_
+

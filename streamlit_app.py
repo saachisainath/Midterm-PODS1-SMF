@@ -122,6 +122,8 @@ if page == "Data Viz":
     st.subheader("📊 Summary Statistics")
     st.write(df.describe())
 
+
+## Prediction Page
 if page == "Prediction":
     st.info("Using sample data (Student Performance)")
     df2 = pd.DataFrame({
@@ -129,9 +131,9 @@ if page == "Prediction":
            "attendance": [60, 65, 70, 75, 80, 85, 90],
            "score": [50, 55, 60, 65, 70, 80, 90]
        })
-    st.subheader("📋 Data Preview")
+    st.subheader("1️⃣ Data Preview")
     st.dataframe(df2)
-    st.header("2️⃣ Select target column (to predict)")
+    st.subheader("2️⃣ Select Target Variable (to predict)")
     target_col = st.selectbox("Target variable", df.columns)
     if not target_col:
        st.warning("Please choose a target column.")
@@ -147,7 +149,7 @@ if page == "Prediction":
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
-    st.header("3️⃣ Choose model")
+    st.subheader("3️⃣ Choose Model")
     if problem_type == "classification":
        model = RandomForestClassifier(random_state=42)
     else:

@@ -56,7 +56,7 @@ if not check_password():
 
 
 ## PAGES
-page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction", "Crystal Ball", "Conclusion"])
+page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction", "Crystal Ball",])
 ##Introduction Page
 if page == "Introduction":
     st.header("Introduction")
@@ -162,8 +162,9 @@ if page == "Prediction":
        acc = accuracy_score(y_test, preds)
        st.metric("Accuracy", f"{acc:.3f}")
     else:
-       mae = mean_absolute_error(y_test, preds)
+       mae = mean_absolute_error(y_test, preds) 
        st.metric("MAE", f"{mae:.3f}")
+    st.write("Predicted accuracy of our model in terms of percentage points")
     st.subheader("🧪 Try your own input")
     input_data = {}
     for col in X.columns:

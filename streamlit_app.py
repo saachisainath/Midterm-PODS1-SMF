@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sklearn as sk
 import seaborn as sns
+import plotly.express as px
 
 st.markdown("<h1 style='color: cornflowerblue;'>Student Success Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<p style='color: lavender;'>Are you going to survive the semester?.</p>", unsafe_allow_html=True)
@@ -80,14 +81,31 @@ if page == "Introduction":
 ## Data Viz Page
 if page == "Data Viz":
     ## Data Preview
-    st.subheader("Data Preview")
+    st.header("Data Preview")
     st.dataframe(df.head())
     st.dataframe(df.tail())
     ## Basic Info
-    st.sidebar.subheader("Pick Your Values")
-    st.sidebar.header("Chart Settings")
+    st.sidebar.header("Pick Your Values")
+    st.sidebar.subheader("Chart Settings")
     numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
-    all_colls = df.columns.tolist()
+    all_cols = df.columns.tolist()
     ## Sidebar Filters
-    #x_axis = st.sidebar.selectbox("X_
+    x_axis = st.sidebar.selectbox("X Value",all_cols)
+    y_axis = st.sidebar.selectbox("Y Value",numeric_cols)
+    chart_type = st.sidebar.selectbox("Chart Type",["Scatter", "Line", "Bar", "Box"])
+    ## Visualization
+    st.subheader("📈 Chart Type")
+    if chart_type = "Scatter":
+        fig = px.scatter(df, x=x_axis, y=y_axis, color=df.columns[0])
+    elif chart_type = "Line":
+        fig = px.line(df, x=x_axis, y=y_axis, color=df.columns[0])
+    elif chart_type = "Bar":
+        fig = px.bar(df, x=x_axis, y=y_axis, color=df.columns[0])
+    else:
+        fig - px.box(df, x=x_axis, y=y_axis, color=df.columns[0])
+    st.plotly_chart(fig, use_container_width=True)
+
+    ##Summery Stats
+    st.subheader("📊 Summary Statistics")
+    st.write(df.describe)
 

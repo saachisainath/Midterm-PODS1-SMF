@@ -11,7 +11,7 @@ import seaborn as sns
 import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.ensemle import accuracy_score, r2_score, mean_absolute_error
+from sklearn.metrics import accuracy_score, r2_score, mean_absolute_error
 
 
 st.image("header.jpg", use_container_width=True)
@@ -123,57 +123,56 @@ if page == "Data Viz":
     st.write(df.describe())
 
 if page == "Prediction":
-    df = pd.read_csv("StudentPerformanceFactors (3).csv")
-st.sidebar.info("Using sample data (Student Performance)")
-df = pd.DataFrame({
-       "study_hours": [2, 3, 4, 5, 6, 8, 10],
-       "attendance": [60, 65, 70, 75, 80, 85, 90],
-       "score": [50, 55, 60, 65, 70, 80, 90]
-   })
-st.subheader("📋 Data Preview")
-st.dataframe(df)
-st.sidebar.header("2️⃣ Select target column (to predict)")
-target_col = st.sidebar.selectbox("Target variable", df.columns)
-if not target_col:
-   st.warning("Please choose a target column.")
-   st.stop()
-X = df.drop(columns=[target_col])
-y = df[target_col]
-problem_type = "regression" if pd.api.types.is_numeric_dtype(y) else "classification"
-st.sidebar.write(f"Detected problem type: **{problem_type}**")
-test_size = st.sidebar.slider("Test size (%)", 10, 40, 20) / 100
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
-X_train = pd.get_dummies(X_train)
-X_test = pd.get_dummies(X_test).reindex(columns=X_train.columns, fill_value=0)
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-st.sidebar.header("3️⃣ Choose model")
-if problem_type == "classification":
-   model = RandomForestClassifier(random_state=42)
-else:
-   model = RandomForestRegressor(random_state=42)
-   model.fit(X_train_scaled, y_train)
-   preds = model.predict(X_test_scaled)
-st.subheader("📈 Model Performance")
-if problem_type == "classification":
-   acc = accuracy_score(y_test, preds)
-   st.metric("Accuracy", f"{acc:.3f}")
-else:
-   mae = mean_absolute_error(y_test, preds)
-   st.metric("MAE", f"{mae:.3f}")
-st.subheader("🧪 Try your own input")
-input_data = {}
-for col in X.columns:
-   val = st.number_input(f"Enter {col}", value=float(df[col].mean()))
-   input_data[col] = val
-if st.button("Predict"):
-   new_df = pd.DataFrame([input_data])
-   new_df = pd.get_dummies(new_df).reindex(columns=X_train.columns, fill_value=0)
-   new_df_scaled = scaler.transform(new_df)
-   prediction = model.predict(new_df_scaled)[0]
-   st.success(f"Predicted **{target_col}**: {prediction}")
-
+    st.info("Using sample data (Student Performance)")
+    df2 = pd.DataFrame({
+           "study_hours": [2, 3, 4, 5, 6, 8, 10],
+           "attendance": [60, 65, 70, 75, 80, 85, 90],
+           "score": [50, 55, 60, 65, 70, 80, 90]
+       })
+    st.subheader("📋 Data Preview")
+    st.dataframe(df2)
+    st.header("2️⃣ Select target column (to predict)")
+    target_col = st.selectbox("Target variable", df.columns)
+    if not target_col:
+       st.warning("Please choose a target column.")
+       st.stop()
+    X = df.drop(columns=[target_col])
+    y = df[target_col]
+    problem_type = "regression" if pd.api.types.is_numeric_dtype(y) else "classification"
+    st.write(f"Detected problem type: **{problem_type}**")
+    test_size = st.slider("Test size (%)", 10, 40, 20) / 100
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
+    X_train = pd.get_dummies(X_train)
+    X_test = pd.get_dummies(X_test).reindex(columns=X_train.columns, fill_value=0)
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    st.header("3️⃣ Choose model")
+    if problem_type == "classification":
+       model = RandomForestClassifier(random_state=42)
+    else:
+       model = RandomForestRegressor(random_state=42)
+       model.fit(X_train_scaled, y_train)
+       preds = model.predict(X_test_scaled)
+    st.subheader("📈 Model Performance")
+    if problem_type == "classification":
+       acc = accuracy_score(y_test, preds)
+       st.metric("Accuracy", f"{acc:.3f}")
+    else:
+       mae = mean_absolute_error(y_test, preds)
+       st.metric("MAE", f"{mae:.3f}")
+    st.subheader("🧪 Try your own input")
+    input_data = {}
+    for col in X.columns:
+       val = st.number_input(f"Enter {col}", value=float(df[col].mean()))
+       input_data[col] = val
+    if st.button("Predict"):
+       new_df = pd.DataFrame([input_data])
+       new_df = pd.get_dummies(new_df).reindex(columns=X_train.columns, fill_value=0)
+       new_df_scaled = scaler.transform(new_df)
+       prediction = model.predict(new_df_scaled)[0]
+       st.success(f"Predicted **{target_col}**: {prediction}")
+    
 
 
 #st.image()

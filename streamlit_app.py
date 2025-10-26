@@ -85,7 +85,7 @@ if page == "Introduction":
     else:
         st.warning("This data has some missing values")
 
-    st.markdown("#### Statistical Summary")
+    st.markdown("#### 🧠 Statistical Summary")
 
     if st.button("Click Here to Generate Statistical Summary!"):
         st.dataframe(df.describe())
@@ -119,9 +119,6 @@ if page == "Data Viz":
         fig = px.box(df, x=x_axis, y=y_axis, color=df.columns[0])
     st.plotly_chart(fig, use_container_width=True)
 
-    ##Summery Stats
-    st.subheader("📊 Summary Statistics")
-    st.write(df.describe())
 
 
 ## Prediction Page

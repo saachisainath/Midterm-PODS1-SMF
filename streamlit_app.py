@@ -53,7 +53,7 @@ if not check_password():
 
 
 ## PAGES
-page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction"])
+page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction", "Crystal Ball", "Conclusion"])
 ##Introduction Page
 if page == "Introduction":
     st.header("Introduction")
@@ -119,3 +119,14 @@ if page == "Data Viz":
     st.subheader("📊 Summary Statistics")
     st.write(df.describe())
 
+if page == "Crystal Ball":
+    st.image("nicole-avagliano-TeLjs2pL5fA-unsplash.jpg", use_container_width=True)
+    st.header("Crystal Ball")
+    st.write("Sometimes all a student needs is a sign that they will do well! Use this page to build up belief in yourself, everything you need is inside of you.")
+    import random
+    st.subheader("🔮 Will I succeed?")
+    if st.button("Click here to reveal your fate!"):
+        st.write(random.choice(["Absolutely, keep going!", "Obviously, you got this!", "Definitely, you're almost there!", "Of course, just focus and shine!"]))
+    st.subhheader("🍀 Find A Lucky Charm!")
+    if st.button("Click here to be gifted a lucky charm to bring you good fortune!"):
+        st.write(random.choice(["Lucky Rabbit 🐰", "Lucky Duck 🦆", "Red Envelope 🧧", "Fortune Cookie 🥠", "Four Leaf Clover 🍀", "Evil Eye Protection 🧿", "Lucky Ladybug 🐞"])

@@ -126,9 +126,10 @@ if page == "Crystal Ball":
     import random
     st.subheader("🔮 Will I succeed?")
     if st.button("Click here to reveal your fate!"):
-        st.write(random.choice(["Absolutely, keep going!", "Obviously, you got this!", "Definitely, you're almost there!", "Of course, just focus and shine!"]))
+        st.header(random.choice(["Absolutely, keep going!", "Obviously, you got this!", "Definitely, you're almost there!", "Of course, just focus and shine!"]))
     
     st.subheader("🍀 Find A Lucky Charm!")
     if st.button("Click here to be gifted a lucky charm to bring you good fortune!"):
-        st.write(random.choice(["Lucky Rabbit 🐰", "Lucky Duck 🦆", "Red Envelope 🧧", "Fortune Cookie 🥠", "Four Leaf Clover 🍀", "Evil Eye Protection 🧿", "Lucky Ladybug 🐞"]))
+        st.write("Your lucky charm is:")
+        st.header(random.choice(["Lucky Rabbit 🐰", "Lucky Duck 🦆", "Red Envelope 🧧", "Fortune Cookie 🥠", "Four Leaf Clover 🍀", "Evil Eye Protection 🧿", "Lucky Ladybug 🐞"]))
     

@@ -12,6 +12,7 @@ import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, r2_score, mean_absolute_error
+import streamlit.components.v1 as components
 
 
 st.image("header.jpg", use_container_width=True)
@@ -93,8 +94,11 @@ if page == "Introduction":
 ## Data Viz Page
 if page == "Data Viz":
     ## Data Preview
+    
     st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", use_container_width=True)
     st.header("Data Visualization")
+    embed_url = "https://your-looker-instance.com/embed/dashboards/123?theme=light"
+    components.iframe(src=embed_url, width=1000, height=600)
     st.subheader("👀 Data Preview")
     st.write("Observe and manipulate the data as it applies to your situation to see what factors are impacting your academic performance!")
     st.markdown("##### Data Head")

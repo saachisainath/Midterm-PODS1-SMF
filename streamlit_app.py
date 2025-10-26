@@ -58,8 +58,10 @@ if page == "Introduction":
     #st.write("Welcome! We looked at many metrics to determine what brings a student academic success in whatever whatever whatever")
     st.header("Introduction")
     st.subheader("🎯 Objective")
+    st.image("albert-vincent-wu-m7yOJx0ALME-unsplash.jpg", width=389)
     st.write("As university students ourselves, we constantly juggle sleep, classes, and extracurriculars while striving to stay motivated and balanced. Managing these competing demands can be overwhelming, so our app leverages data visualization and predictive insights to help students better understand their habits, anticipate challenges, and make smarter decisions about how to manage their time and well-being.")
     st.write("Our aim is to arm you with information so you can grow as a student. Take a breath, take a look, you've got this semester!")
+    
     st.subheader("📊 Data Set")
     st.write("Take a look here to see what we use to inform our student success visualizations and predictions!")
 
@@ -77,11 +79,11 @@ if page == "Introduction":
     if missing.sum()==0:
         st.success("No missing values found")
     else:
-        st.warning("You have some missing values")
+        st.warning("This data has some missing values")
 
     st.markdown("#### Statistical Summary")
 
-    if st.button("Generate Statistical Summary"):
+    if st.button("Click Here to Generate Statistical Summary!"):
         st.dataframe(df.describe())
 
 ## Data Viz Page

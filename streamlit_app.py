@@ -92,7 +92,7 @@ if page == "Introduction":
 ## Data Viz Page
 if page == "Data Viz":
     ## Data Preview
-    st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", unsafe_allow_html=True)
+    st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", use_container_width=True)
     st.header("Data Visualization Preview")
     st.dataframe(df.head())
     st.dataframe(df.tail())

@@ -125,6 +125,7 @@ if page == "Data Viz":
 
 ## Prediction Page
 if page == "Prediction":
+    st.image("robynne-o-HOrhCnQsxnQ-unsplash.jpg", use_container_width=True)
     st.info("Using sample data (Student Performance)")
     df2 = pd.DataFrame({
            "study_hours": [2, 3, 4, 5, 6, 8, 10],

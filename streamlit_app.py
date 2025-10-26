@@ -12,7 +12,7 @@ import plotly.express as px
 
 st.markdown("<h1 style='color: cornflowerblue;'>Student Success Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<p style='color: lavender;'>Are you going to survive the semester?.</p>", unsafe_allow_html=True)
-st.image(joshua-hoehne-iggWDxHTAUQ-unsplash.jpg)
+st.image("joshua-hoehne-iggWDxHTAUQ-unsplash.jpg")
 
 df = pd.read_csv("StudentPerformanceFactors.csv")
 ## Automated Report 

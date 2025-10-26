@@ -59,8 +59,9 @@ if not check_password():
 page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction", "Crystal Ball",])
 ##Introduction Page
 if page == "Introduction":
-    st.header("Introduction")
     st.image("boitumelo-o_tcYADlSt8-unsplash.jpg", use_container_width=True)
+    st.header("Introduction")
+
     st.subheader("🎯 Objective")
     st.write("As university students ourselves, we constantly juggle sleep, classes, and extracurriculars while striving to stay motivated and balanced. Managing these competing demands can be overwhelming, so our app leverages data visualization and predictive insights to help students better understand their habits, anticipate challenges, and make smarter decisions about how to manage their time and well-being.")
     st.write("Our aim is to arm you with information so you can grow as a student. Take a breath, take a look, you've got this semester!")
@@ -126,6 +127,8 @@ if page == "Data Viz":
 ## Prediction Page
 if page == "Prediction":
     st.image("robynne-o-HOrhCnQsxnQ-unsplash.jpg", use_container_width=True)
+    st.header("Prediction")
+
     st.info("Using sample data (Student Performance)")
     df2 = pd.DataFrame({
            "study_hours": [2, 3, 4, 5, 6, 8, 10],

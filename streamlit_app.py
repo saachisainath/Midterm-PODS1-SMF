@@ -95,7 +95,7 @@ if page == "Data Viz":
     ## Data Preview
     st.image("conny-schneider-pREq0ns_p_E-unsplash.jpg", use_container_width=True)
     st.header("Data Visualization")
-    st.subheader("Data Preview")
+    st.subheader("👀 Data Preview")
     st.write("Observe and manipulate the data as it applies to your situation to see what factors are impacting your academic performance!")
     st.markdown("##### Data Head")
     st.dataframe(df.head())

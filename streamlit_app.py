@@ -56,10 +56,13 @@ page = st.sidebar.selectbox("Select Page",["Introduction","Data Viz","Prediction
 if page == "Introduction":
    # st.header("Introduction")
     #st.write("Welcome! We looked at many metrics to determine what brings a student academic success in whatever whatever whatever")
-    st.subheader("01 Introduction")
-    st.markdown("##### 🎯 Objective")
+    st.header("01 Introduction")
+    st.subheader("🎯 Objective")
     st.write("As university students ourselves, we constantly juggle sleep, classes, and extracurriculars while striving to stay motivated and balanced. Managing these competing demands can be overwhelming, so our app leverages data visualization and predictive insights to help students better understand their habits, anticipate challenges, and make smarter decisions about how to manage their time and well-being.")
+    st.write("Our aim is to arm you with information so you can grow as a student. Take a breath, take a look, you've got this semester!")
+    st.subheader("📊 Data Set")
     st.markdown("##### Data Preview")
+    st.write("Take a look here to see what we use to inform our student success visualizations and predictions!")
 
     rows = st.slider("Select a number of rows",5,20,5)
     

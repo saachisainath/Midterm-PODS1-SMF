@@ -95,14 +95,14 @@ if page == "Data Viz":
     chart_type = st.sidebar.selectbox("Chart Type",["Scatter", "Line", "Bar", "Box"])
     ## Visualization
     st.subheader("📈 Chart Type")
-    if chart_type = "Scatter":
+    if chart_type == "Scatter":
         fig = px.scatter(df, x=x_axis, y=y_axis, color=df.columns[0])
-    elif chart_type = "Line":
+    elif chart_type == "Line":
         fig = px.line(df, x=x_axis, y=y_axis, color=df.columns[0])
-    elif chart_type = "Bar":
+    elif chart_type == "Bar":
         fig = px.bar(df, x=x_axis, y=y_axis, color=df.columns[0])
     else:
-        fig - px.box(df, x=x_axis, y=y_axis, color=df.columns[0])
+        fig = px.box(df, x=x_axis, y=y_axis, color=df.columns[0])
     st.plotly_chart(fig, use_container_width=True)
 
     ##Summery Stats

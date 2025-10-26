@@ -13,6 +13,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, r2_score, mean_absolute_error
 import streamlit.components.v1 as components
+import looker_sdk
 
 
 st.image("header.jpg", use_container_width=True)

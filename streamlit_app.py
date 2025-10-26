@@ -134,12 +134,12 @@ if page == "Prediction":
     st.subheader("1️⃣ Data Preview")
     st.dataframe(df2)
     st.subheader("2️⃣ Select Target Variable (to predict)")
-    target_col = st.selectbox("Target variable", df.columns)
+    target_col = st.selectbox("Target variable", df2.columns)
     if not target_col:
        st.warning("Please choose a target column.")
        st.stop()
-    X = df.drop(columns=[target_col])
-    y = df[target_col]
+    X = df2.drop(columns=[target_col])
+    y = df2[target_col]
     problem_type = "regression" if pd.api.types.is_numeric_dtype(y) else "classification"
     st.write(f"Detected problem type: **{problem_type}**")
     test_size = st.slider("Test size (%)", 10, 40, 20) / 100

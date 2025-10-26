@@ -167,7 +167,7 @@ if page == "Prediction":
     st.subheader("🧪 Try your own input")
     input_data = {}
     for col in X.columns:
-       val = st.number_input(f"Enter {col}", value=float(df[col].mean())) if pd.notna(mean_val) else 0.0)
+       val = st.number_input(f"Enter {col}", value=float(df[col].mean())) if pd.notna((mean_val) else 0.0)
        input_data[col] = val
     if st.button("Predict"):
        new_df = pd.DataFrame([input_data])

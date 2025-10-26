@@ -119,6 +119,9 @@ if page == "Data Viz":
     st.subheader("📊 Summary Statistics")
     st.write(df.describe())
 
+if page == "Prediction":
+    #st.image()
+
 if page == "Crystal Ball":
     st.image("nicole-avagliano-TeLjs2pL5fA-unsplash.jpg", use_container_width=True)
     st.header("Crystal Ball")

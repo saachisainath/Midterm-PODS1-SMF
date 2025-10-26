@@ -150,7 +150,7 @@ if page == "Prediction":
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     st.subheader("3️⃣ Choose Model")
-    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
     if problem_type == "classification":
        model = RandomForestClassifier(random_state=42)
     else:

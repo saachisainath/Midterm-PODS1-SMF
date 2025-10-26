@@ -97,16 +97,16 @@ if page == "Data Viz":
     st.dataframe(df.head())
     st.dataframe(df.tail())
     ## Basic Info
-    st.sidebar.header("Pick Your Values")
-    st.sidebar.subheader("Chart Settings")
+    st.subheader("🧐 Pick Your Values")
+    st.markdown("Chart Settings")
     numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
     all_cols = df.columns.tolist()
     ## Sidebar Filters
-    x_axis = st.sidebar.selectbox("X Value",all_cols)
-    y_axis = st.sidebar.selectbox("Y Value",numeric_cols)
-    chart_type = st.sidebar.selectbox("Chart Type",["Scatter", "Line", "Bar", "Box"])
+    x_axis = st.selectbox("X Value",all_cols)
+    y_axis = st.selectbox("Y Value",numeric_cols)
+    chart_type = st.selectbox("Chart Type",["Scatter", "Line", "Bar", "Box"])
     ## Visualization
-    st.subheader("📈 Chart Type")
+    st.subheader("📈 Make a Chart!")
     if chart_type == "Scatter":
         fig = px.scatter(df, x=x_axis, y=y_axis, color=df.columns[0])
     elif chart_type == "Line":

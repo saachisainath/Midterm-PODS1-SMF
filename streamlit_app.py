@@ -107,5 +107,5 @@ if page == "Data Viz":
 
     ##Summery Stats
     st.subheader("📊 Summary Statistics")
-    st.write(df.describe)
+    st.write(df.describe())
 

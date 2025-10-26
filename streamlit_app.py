@@ -1,5 +1,5 @@
 import streamlit as st
-st.sidebar.title("Student Success Predictor!!")
+st.sidebar.title("🧑‍🎓 Student Success Predictor")
 st.sidebar.write("Are you going to survive this semester?")
 
 

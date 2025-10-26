@@ -11,8 +11,8 @@ import seaborn as sns
 import plotly.express as px
 
 st.markdown("<h1 style='color: cornflowerblue;'>Student Success Predictor</h1>", unsafe_allow_html=True)
-st.markdown("<p style='color: lavender;'>Are you going to survive the semester?.</p>", unsafe_allow_html=True)
-st.image("joshua-hoehne-iggWDxHTAUQ-unsplash.jpg", width=900)
+st.markdown("<p style='color: lavender;'>Are you going to survive the semester? Our data will tell!</p>", unsafe_allow_html=True)
+st.image("joshua-hoehne-iggWDxHTAUQ-unsplash.jpg", width=700)
 
 df = pd.read_csv("StudentPerformanceFactors.csv")
 ## Automated Report 
@@ -57,7 +57,8 @@ if page == "Introduction":
    # st.header("Introduction")
     #st.write("Welcome! We looked at many metrics to determine what brings a student academic success in whatever whatever whatever")
     st.subheader("01 Introduction")
-
+    st.markdown("##### 🎯 Objective")
+    st.write("As university students ourselves, we constantly juggle sleep, classes, and extracurriculars while striving to stay motivated and balanced. Managing these competing demands can be overwhelming, so our app leverages data visualization and predictive insights to help students better understand their habits, anticipate challenges, and make smarter decisions about how to manage their time and well-being.")
     st.markdown("##### Data Preview")
 
     rows = st.slider("Select a number of rows",5,20,5)
